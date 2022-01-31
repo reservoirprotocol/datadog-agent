@@ -8,5 +8,5 @@ ENV DD_APM_NON_LOCAL_TRAFFIC=true
 
 LABEL "com.datadoghq.ad.check_names"='["postgres"]'
 LABEL "com.datadoghq.ad.init_configs"='[{}]'
-LABEL "com.datadoghq.ad.instances"='[{"host":"containers-us-west-9.railway.app","port":7656,"dbname":"railway","username":"datadog","password":"password"}]'
+LABEL "com.datadoghq.ad.instances"='[{"host":"containers-us-west-9.railway.app","port":7656,"username":"datadog","password":"password"}]'
 LABEL "com.datadoghq.ad.logs"='[{"source":"postgresql","service":"postgresql"}]'

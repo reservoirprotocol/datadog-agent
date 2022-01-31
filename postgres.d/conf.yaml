@@ -1,8 +1,18 @@
 init_config:
 
+# TODO: Find a better way to do this, without exposing credentials
 instances:
+  # Mainnet
   - host: containers-us-west-9.railway.app
     port: 7656
+    username: datadog
+    password: password
+    dbname: railway
+    disable_generic_tags: true
+
+  # Rinkeby
+  - host: containers-us-west-18.railway.app
+    port: 7938
     username: datadog
     password: password
     dbname: railway

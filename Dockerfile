@@ -9,6 +9,6 @@ ENV DD_APM_NON_LOCAL_TRAFFIC=true
 ENV DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
 ENV DD_PROCESS_AGENT_ENABLED=true
 
-COPY postgres.d/conf.yaml /etc/datadog-agent/postgres.d/conf.yaml
+COPY postgres.d/conf.yaml /etc/datadog-agent/conf.d/postgres.d/conf.yaml
 
 RUN rm -rf postgres.d

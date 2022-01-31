@@ -1,0 +1,9 @@
+init_config:
+
+instances:
+  - host: containers-us-west-9.railway.app
+    port: 7656
+    username: datadog
+    password: password
+    dbname: railway
+    disable_generic_tags: true

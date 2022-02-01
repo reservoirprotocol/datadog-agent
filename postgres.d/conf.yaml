@@ -11,7 +11,8 @@ instances:
     disable_generic_tags: true
 
   # Rinkeby
-  - host: containers-us-west-18.railway.app
+  - dbm: true
+    host: containers-us-west-18.railway.app
     port: 7938
     username: datadog
     password: password

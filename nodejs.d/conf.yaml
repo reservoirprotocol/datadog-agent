@@ -4,9 +4,18 @@ instances:
 
 ##Log section
 logs:
-
   - type: file
     path: "/logs/app.log"
+    service: nodejs
+    source: nodejs
+    sourcecategory: sourcecode
+  - type: file
+    path: "./logs/app.log"
+    service: nodejs
+    source: nodejs
+    sourcecategory: sourcecode
+  - type: file
+    path: "logs/app.log"
     service: nodejs
     source: nodejs
     sourcecategory: sourcecode

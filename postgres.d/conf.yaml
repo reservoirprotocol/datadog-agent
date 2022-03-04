@@ -19,3 +19,21 @@ instances:
     password: password
     dbname: railway
     disable_generic_tags: true
+
+  # Mainnet V5
+  - dbm: true
+    host: containers-us-west-29.railway.app
+    port: 7952
+    username: datadog
+    password: 85v693m4FdKj
+    dbname: railway
+    disable_generic_tags: true
+
+  # Rinkeby V5
+  - dbm: true
+    host: containers-us-west-30.railway.app
+    port: 6222
+    username: datadog
+    password: 85v693m4FdKj
+    dbname: railway
+    disable_generic_tags: true

@@ -9,6 +9,5 @@ ENV DD_LOGS_ENABLED=true
 ENV DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
 
 COPY postgres.d/conf.yaml /etc/datadog-agent/conf.d/postgres.d/conf.yaml
-COPY nodejs.d/conf.yaml /etc/datadog-agent/conf.d/nodejs.d/conf.yaml
 
 RUN rm -rf postgres.d

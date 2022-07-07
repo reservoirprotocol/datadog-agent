@@ -7,7 +7,7 @@ instances:
     host: indexer-prod-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
     port: 5432
     username: root
-    password: ${DB_DEV_PASSWORD}
+    password: uIzjeOjIGF
     dbname: main
     disable_generic_tags: true
 
@@ -16,6 +16,6 @@ instances:
     host: indexer-dev-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
     port: 5432
     username: root
-    password: ${DB_PROD_PASSWORD}
+    password: iiWkuPhoHk
     dbname: main
     disable_generic_tags: true

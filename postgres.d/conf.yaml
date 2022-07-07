@@ -8,6 +8,7 @@ instances:
     port: 5432
     username: datadog
     password: rtdwA7Dqj52je5Y4
+    dbname: main
     disable_generic_tags: true
 
   # Rinkeby V5
@@ -16,4 +17,5 @@ instances:
     port: 5432
     username: datadog
     password: fTM87cTHVPTbNMu2
+    dbname: main
     disable_generic_tags: true

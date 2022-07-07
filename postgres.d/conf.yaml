@@ -6,16 +6,14 @@ instances:
   - dbm: true
     host: indexer-prod-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
     port: 5432
-    username: root
-    password: uIzjeOjIGF
-    dbname: main
+    username: datadog
+    password: rtdwA7Dqj52je5Y4
     disable_generic_tags: true
 
   # Rinkeby V5
   - dbm: true
     host: indexer-dev-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
     port: 5432
-    username: root
-    password: iiWkuPhoHk
-    dbname: main
+    username: datadog
+    password: fTM87cTHVPTbNMu2
     disable_generic_tags: true

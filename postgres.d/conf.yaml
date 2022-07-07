@@ -2,38 +2,20 @@ init_config:
 
 # TODO: Find a better way to do this, without exposing credentials
 instances:
-  # Mainnet
-  - dbm: true
-    host: containers-us-west-9.railway.app
-    port: 7656
-    username: datadog
-    password: password
-    dbname: railway
-    disable_generic_tags: true
-
-  # Rinkeby
-  - dbm: true
-    host: containers-us-west-18.railway.app
-    port: 7938
-    username: datadog
-    password: password
-    dbname: railway
-    disable_generic_tags: true
-
   # Mainnet V5
   - dbm: true
-    host: containers-us-west-29.railway.app
-    port: 7952
-    username: datadog
-    password: 85v693m4FdKj
-    dbname: railway
+    host: indexer-prod-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
+    port: 5432
+    username: root
+    password: ${process.env.DB_DEV_PASSWORD}
+    dbname: main
     disable_generic_tags: true
 
   # Rinkeby V5
   - dbm: true
-    host: containers-us-west-30.railway.app
-    port: 6222
-    username: datadog
-    password: 85v693m4FdKj
-    dbname: railway
+    host: indexer-dev-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
+    port: 5432
+    username: root
+    password: ${process.env.DB_PROD_PASSWORD}
+    dbname: main
     disable_generic_tags: true

@@ -2,14 +2,14 @@ init_config:
 
 # TODO: Find a better way to do this, without exposing credentials
 instances:
-  # Rinkeby V5
-  - dbm: true
-    host: indexer-prod-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
-    port: 5432
-    username: datadog
-    password: rtdwA7Dqj52je5Y4
-    dbname: main
-    disable_generic_tags: true
+#  # Rinkeby V5
+#  - dbm: true
+#    host: indexer-prod-postgresql.cluster-cdns4bkgzluq.us-west-1.rds.amazonaws.com
+#    port: 5432
+#    username: datadog
+#    password: rtdwA7Dqj52je5Y4
+#    dbname: main
+#    disable_generic_tags: true
 
 #  # Mainnet V5
 #  - dbm: true

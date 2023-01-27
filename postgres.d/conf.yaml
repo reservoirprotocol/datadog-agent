@@ -8,5 +8,5 @@ instances:
     username: "%%env_POLYGON_DB_USER%%"
     password: "%%env_POLYGON_DB_PASSWORD%%"
     dbname: "%%env_POLYGON_DB_NAME%%"
-    disable_generic_tags: true
+    disable_generic_tags: "%%env_POLYGON_DB_MONITORING_ENABLED%%"
 

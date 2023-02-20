@@ -1,4 +1,4 @@
-FROM datadog/agent:7.37.1
+FROM datadog/agent:7.42.0
 
 ENV NON_LOCAL_TRAFFIC=true
 

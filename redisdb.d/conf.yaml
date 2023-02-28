@@ -6,9 +6,13 @@ instances:
     port: "%%env_MAINNET_REDIS_PORT%%"
     username: "%%env_MAINNET_REDIS_USERNAME%%"
     password: "%%env_MAINNET_REDIS_PASSWORD%%"
+    tags:
+      - instance: mainnet
 
   # Polygon
   - host: "%%env_POLYGON_REDIS_HOST%%"
     port: "%%env_POLYGON_REDIS_PORT%%"
     username: "%%env_POLYGON_REDIS_USERNAME%%"
     password: "%%env_POLYGON_REDIS_PASSWORD%%"
+    tags:
+      - instance: polygon

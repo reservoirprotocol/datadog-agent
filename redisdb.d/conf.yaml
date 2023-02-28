@@ -7,7 +7,7 @@ instances:
     username: "%%env_MAINNET_REDIS_USERNAME%%"
     password: "%%env_MAINNET_REDIS_PASSWORD%%"
     tags:
-      - instance: mainnet
+      - instance:mainnet
 
   # Polygon
   - host: "%%env_POLYGON_REDIS_HOST%%"
@@ -15,4 +15,4 @@ instances:
     username: "%%env_POLYGON_REDIS_USERNAME%%"
     password: "%%env_POLYGON_REDIS_PASSWORD%%"
     tags:
-      - instance: polygon
+      - instance:polygon

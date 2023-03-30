@@ -26,7 +26,32 @@ instances:
             type: tag
           - name: io_time
             type: count
-
+      - metric_prefix: mainnet_writer
+        query: SELECT s.relname AS tablename, |
+                      s.indexrelname AS indexname, |
+                      s.idx_scan AS scans, |
+                      pg_relation_size(s.indexrelid) AS index_size |
+                FROM pg_catalog.pg_stat_user_indexes s |
+                JOIN pg_catalog.pg_index i ON s.indexrelid = i.indexrelid |
+                WHERE s.idx_scan < 1000      -- has never been scanned |
+                AND 0 <>ALL (i.indkey)  -- no index column is an expression |
+                AND NOT i.indisunique   -- is not a UNIQUE index |
+                AND NOT EXISTS          -- does not enforce a constraint |
+                  (SELECT 1 FROM pg_catalog.pg_constraint c |
+                    WHERE c.conindid = s.indexrelid) |
+                AND NOT EXISTS          -- is not an index partition |
+                  (SELECT 1 FROM pg_catalog.pg_inherits AS inh |
+                    WHERE inh.inhrelid = s.indexrelid) |
+                ORDER BY pg_relation_size(s.indexrelid) DESC;
+        columns:
+          - name: tablename
+            type: tag
+          - name: indexname
+            type: tag
+          - name: scans
+            type: count
+          - name: index_size
+            type: count
 
   # Mainnet Reader
   - dbm: "%%env_MAINNET_READER_DB_MONITORING_ENABLED%%"
@@ -43,4 +68,30 @@ instances:
           - name: query
             type: tag
           - name: io_time
+            type: count
+      - metric_prefix: mainnet_reader
+        query: SELECT s.relname AS tablename, |
+                      s.indexrelname AS indexname, |
+                      s.idx_scan AS scans, |
+                      pg_relation_size(s.indexrelid) AS index_size |
+                FROM pg_catalog.pg_stat_user_indexes s |
+                JOIN pg_catalog.pg_index i ON s.indexrelid = i.indexrelid |
+                WHERE s.idx_scan < 1000      -- has never been scanned |
+                AND 0 <>ALL (i.indkey)  -- no index column is an expression |
+                AND NOT i.indisunique   -- is not a UNIQUE index |
+                AND NOT EXISTS          -- does not enforce a constraint |
+                  (SELECT 1 FROM pg_catalog.pg_constraint c |
+                    WHERE c.conindid = s.indexrelid) |
+                AND NOT EXISTS          -- is not an index partition |
+                  (SELECT 1 FROM pg_catalog.pg_inherits AS inh |
+                    WHERE inh.inhrelid = s.indexrelid) |
+                ORDER BY pg_relation_size(s.indexrelid) DESC;
+        columns:
+          - name: tablename
+            type: tag
+          - name: indexname
+            type: tag
+          - name: scans
+            type: count
+          - name: index_size
             type: count

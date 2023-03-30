@@ -20,7 +20,7 @@ instances:
     disable_generic_tags: true
     custom_queries:
       - metric_prefix: mainnet_writer
-      - query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
+        query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
         columns:
           - name: query
             type: tag
@@ -38,7 +38,7 @@ instances:
     disable_generic_tags: true
     custom_queries:
       - metric_prefix: mainnet_reader
-      - query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
+        query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
         columns:
           - name: query
             type: tag

@@ -1,6 +1,15 @@
 init_config:
 
 instances:
+  # Polygon
+  - dbm: "%%env_POLYGON_DB_MONITORING_ENABLED%%"
+    host: "%%env_POLYGON_DB_HOST%%"
+    port: "%%env_POLYGON_DB_PORT%%"
+    username: "%%env_POLYGON_DB_USER%%"
+    password: "%%env_POLYGON_DB_PASSWORD%%"
+    dbname: "%%env_POLYGON_DB_NAME%%"
+    disable_generic_tags: true
+
   # Mainnet Writer
   - dbm: "%%env_MAINNET_WRITER_DB_MONITORING_ENABLED%%"
     host: "%%env_MAINNET_WRITER_DB_HOST%%"
@@ -18,4 +27,3 @@ instances:
     password: "%%env_MAINNET_READER_DB_PASSWORD%%"
     dbname: "%%env_MAINNET_READER_DB_NAME%%"
     disable_generic_tags: true
-

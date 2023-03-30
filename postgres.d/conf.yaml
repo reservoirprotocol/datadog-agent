@@ -18,6 +18,15 @@ instances:
     password: "%%env_MAINNET_WRITER_DB_PASSWORD%%"
     dbname: "%%env_MAINNET_WRITER_DB_NAME%%"
     disable_generic_tags: true
+    custom_queries:
+      - metric_prefix: mainnet_writer
+      - query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
+        columns:
+          - name: query
+            type: tag
+          - name: io_time
+            type: count
+
 
   # Mainnet Reader
   - dbm: "%%env_MAINNET_READER_DB_MONITORING_ENABLED%%"
@@ -27,3 +36,11 @@ instances:
     password: "%%env_MAINNET_READER_DB_PASSWORD%%"
     dbname: "%%env_MAINNET_READER_DB_NAME%%"
     disable_generic_tags: true
+    custom_queries:
+      - metric_prefix: mainnet_reader
+      - query: SELECT query, blk_read_time + blk_write_time AS io_time FROM pg_stat_statements ORDER BY io_time DESC LIMIT 50;
+        columns:
+          - name: query
+            type: tag
+          - name: io_time
+            type: count

@@ -53,6 +53,11 @@ instances:
             type: count
           - name: index_size
             type: count
+      - metric_prefix: mainnet_writer
+        query: SELECT COUNT(*) FROM pg_replication_slots WHERE NOT active
+        columns:
+          - name: unused_replication_slots
+            type: count
 
   # Mainnet Reader
   - dbm: "%%env_MAINNET_READER_DB_MONITORING_ENABLED%%"

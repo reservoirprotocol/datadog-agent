@@ -8,6 +8,8 @@ instances:
     password: "%%env_MAINNET_REDIS_PASSWORD%%"
     tags:
       - instance:mainnet
+    keys:
+      - pending-refresh-tokens:opensea
 
   # Polygon
   - host: "%%env_POLYGON_REDIS_HOST%%"
@@ -16,3 +18,5 @@ instances:
     password: "%%env_POLYGON_REDIS_PASSWORD%%"
     tags:
       - instance:polygon
+    keys:
+      - pending-refresh-tokens:opensea
